@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ADD spring-boot-docker-1.0.jar app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+WORKDIR /opt/webbbb
+ADD target/TV-Backend-1.0-SNAPSHOT.jar app.jar
+EXPOSE 3333
+ENTRYPOINT ["java","-jar","app.jar"]
