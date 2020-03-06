@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: src/main/docker/Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/db1?useUnicode=true&characterEncoding=utf8&useSSL=false
     networks:
       - backend
     ports:
